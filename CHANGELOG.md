@@ -6,7 +6,7 @@
 
 - Dart and Flutter example 
 
-## 1.1.0
+## 1.1.1
 
 - Flutter example
 - Update API doc
