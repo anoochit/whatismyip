@@ -1,7 +1,7 @@
 name: whatismyip
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+homepage: https://github.com/anoochit/whatismyip
 
 environment:
   sdk: ^3.7.0
