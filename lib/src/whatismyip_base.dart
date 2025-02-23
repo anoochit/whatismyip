@@ -20,15 +20,21 @@ class WhatIsMyIp {
     }
   }
 
-  Future<IpGeolocation> getIpGeolocation({required String apiKey}) async {
+  Future<IpGeolocation> getIpGeolocation({
+    required String apiKey,
+    String? ip,
+  }) async {
+    String yourIp = '';
     try {
-      final yourIp = await getIpAddress();
+      if (ip == null) {
+        yourIp = await getIpAddress();
+      } else {
+        yourIp = ip;
+      }
 
       final ip2locationEndpoint =
           'https://api.ip2location.io/?key=$apiKey&ip=$yourIp';
-
       final res = await http.get(Uri.parse(ip2locationEndpoint));
-
       if (res.statusCode == HttpStatus.ok) {
         return ipGeolocationFromJson(res.body);
       } else {

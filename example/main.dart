@@ -8,6 +8,7 @@ Future<void> main() async {
   print('IP Address = $myip');
 
   var ipgeolocation = await whatismyip.getIpGeolocation(apiKey: apiKey);
+
   print('My City = ${ipgeolocation.cityName}');
 
   print('${ipgeolocation.toJson()}');
