@@ -47,7 +47,7 @@ class WhatIsMyIp {
       if (res.statusCode == HttpStatus.ok) {
         return res.body;
       } else {
-        throw ('Cannot access Ipify API endpoint');
+        throw (res.statusCode);
       }
     } catch (e) {
       rethrow;
@@ -87,7 +87,7 @@ class WhatIsMyIp {
       if (res.statusCode == HttpStatus.ok) {
         return ipGeolocationFromJson(res.body);
       } else {
-        throw ('Cannot access IP2LOCATION API endpoint');
+        throw (res.statusCode);
       }
     } catch (e) {
       rethrow;

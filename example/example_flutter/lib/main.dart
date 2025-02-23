@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:whatismyip/whatismyip.dart';
 
+const apiKey = String.fromEnvironment('IP2LOCATION_API', defaultValue: '');
+
 void main() {
   runApp(const MyApp());
 }
@@ -32,7 +34,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String apiKey = String.fromEnvironment('IP2LOCATION_API', defaultValue: '');
   String result = '';
 
   @override
@@ -47,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(result),
+            Padding(padding: const EdgeInsets.all(8.0), child: Text(result)),
             ElevatedButton(
               onPressed: () => _findMyIp(context),
               child: Text('Find My IP'),
@@ -61,7 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> _findMyIp(BuildContext context) async {
     try {
       final ip = await WhatIsMyIp().getIpGeolocation(apiKey: apiKey);
-
       setState(() {
         result = jsonEncode(ip.toJson());
       });
