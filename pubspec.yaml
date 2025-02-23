@@ -1,6 +1,6 @@
 name: whatismyip
 description: A lightweight Dart package that helps you discover your IP address and retrieve detailed geolocation information.
-version: 1.1.0
+version: 1.1.1
 homepage: https://github.com/anoochit/whatismyip
 
 environment:

@@ -4,4 +4,9 @@
 
 ## 1.1.0
 
-- Change to Flutter example 
+- Dart and Flutter example 
+
+## 1.1.0
+
+- Flutter example
+- Update API doc
