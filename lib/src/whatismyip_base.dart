@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:http/http.dart' as http;
 import 'package:whatismyip/src/models/ipgeolocation.dart';
 
@@ -44,7 +42,7 @@ class WhatIsMyIp {
     try {
       final res = await http.get(Uri.parse(_ipifyEndpoint));
 
-      if (res.statusCode == HttpStatus.ok) {
+      if (res.statusCode == 200) {
         return res.body;
       } else {
         throw (res.statusCode);
@@ -84,7 +82,7 @@ class WhatIsMyIp {
       final ip2locationEndpoint =
           'https://api.ip2location.io/?key=$apiKey&ip=$yourIp';
       final res = await http.get(Uri.parse(ip2locationEndpoint));
-      if (res.statusCode == HttpStatus.ok) {
+      if (res.statusCode == 200) {
         return ipGeolocationFromJson(res.body);
       } else {
         throw (res.statusCode);

@@ -4,5 +4,4 @@
 
 ## 1.1.0
 
-- Support Flutter SDK
-- Dart and Flutter example 
+- Change to Flutter example 
