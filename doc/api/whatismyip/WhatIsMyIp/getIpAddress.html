@@ -83,10 +83,10 @@
   try {
     final res = await http.get(Uri.parse(_ipifyEndpoint));
 
-    if (res.statusCode == HttpStatus.ok) {
+    if (res.statusCode == 200) {
       return res.body;
     } else {
-      throw (&#39;Cannot access Ipify API endpoint&#39;);
+      throw (res.statusCode);
     }
   } catch (e) {
     rethrow;
@@ -119,7 +119,7 @@
 <footer>
   <span class="no-break">
     whatismyip
-      1.0.0
+      1.1.0
   </span>
   
 </footer>

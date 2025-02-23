@@ -103,10 +103,10 @@ including country, region, city, and other geographical data.</p>
     final ip2locationEndpoint =
         &#39;https:&#47;&#47;api.ip2location.io&#47;?key=$apiKey&amp;ip=$yourIp&#39;;
     final res = await http.get(Uri.parse(ip2locationEndpoint));
-    if (res.statusCode == HttpStatus.ok) {
+    if (res.statusCode == 200) {
       return ipGeolocationFromJson(res.body);
     } else {
-      throw (&#39;Cannot access IP2LOCATION API endpoint&#39;);
+      throw (res.statusCode);
     }
   } catch (e) {
     rethrow;
@@ -139,7 +139,7 @@ including country, region, city, and other geographical data.</p>
 <footer>
   <span class="no-break">
     whatismyip
-      1.0.0
+      1.1.0
   </span>
   
 </footer>
