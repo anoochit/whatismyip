@@ -52,10 +52,14 @@ Future<void> main() async {
 
 ### Running the Example
 
-To run the example with your IP2Location API key:
+To run the example with your IP2Location API key
 
 ```bash
 dart run --define=IP2LOCATION_API=your_api_key_here main.dart
+```
+
+``bash
+flutter run --dart-define=IP2LOCATION_API=$env:your_api_key_here
 ```
 
 ### Sample Output
